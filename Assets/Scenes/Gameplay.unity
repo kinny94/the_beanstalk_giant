@@ -242,6 +242,7 @@ GameObject:
   - component: {fileID: 557294571}
   - component: {fileID: 557294573}
   - component: {fileID: 557294572}
+  - component: {fileID: 557294574}
   m_Layer: 0
   m_Name: Cloud Spawner
   m_TagString: Untagged
@@ -271,7 +272,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -308,6 +309,26 @@ MonoBehaviour:
   - {fileID: 904265577}
   - {fileID: 1564911104}
   collectables: []
+--- !u!50 &557294574
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 557294570}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &745052649 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1612001355348330, guid: e59d1c0e8ddaa4d26b276352f9706336,
@@ -405,8 +426,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 960355124}
-  - component: {fileID: 960355126}
   - component: {fileID: 960355125}
+  - component: {fileID: 960355127}
+  - component: {fileID: 960355126}
   m_Layer: 0
   m_Name: Cloud Collector
   m_TagString: Untagged
@@ -463,6 +485,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891fa1ba7cfbf42a6a7c6a68b0e68e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &960355127
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 960355123}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1102808858
 Prefab:
   m_ObjectHideFlags: 0
