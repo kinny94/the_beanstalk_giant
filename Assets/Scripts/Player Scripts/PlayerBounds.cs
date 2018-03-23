@@ -23,7 +23,7 @@ public class PlayerBounds : MonoBehaviour {
 		if (transform.position.x > maxX) {
 			Vector3 temp = transform.position;
 			temp.x = maxX;
-			transform.position = temp;
+			transform.position = temp; 
 		}
 	}
 
