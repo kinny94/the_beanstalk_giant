@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HighScoreController : MonoBehaviour {
 
+	private GameplayController gc;
 	// Use this for initialization
 	void Start () {
 		
