@@ -22,6 +22,10 @@ public class CloudSpawner : MonoBehaviour {
 		SetMinAndMaxX ();
 		CreateClouds ();
 		player = GameObject.Find ("Player");
+
+		for (int i = 0; i < collectables.Length; i++) {
+			collectables [i].SetActive (true);
+		}
 	}
 
 	// Use this for initialization
@@ -131,6 +135,25 @@ public class CloudSpawner : MonoBehaviour {
 
 						clouds[i].transform.position = temp;
 						clouds[i].SetActive (true);
+
+						int random = Random.Range (0, collectables.Length);
+						if (clouds [i].tag != "Deadly") {
+							if( !collectables[random].activeInHierarchy ){
+								Vector3 temp2 = clouds [i].transform.position;
+								temp2.y += 0.7f;
+								temp2.z -= 7f;
+
+								if (collectables [random].tag == "Life") {
+									if (PlayerScore.lifeScore < 2) {
+										collectables [random].transform.position = temp2;
+										collectables [random].SetActive (true);
+									}
+								} else {
+									collectables [random].transform.position = temp2;
+									collectables [random].SetActive (true); 
+								}
+							}
+						}
 					}
 				}
 			}

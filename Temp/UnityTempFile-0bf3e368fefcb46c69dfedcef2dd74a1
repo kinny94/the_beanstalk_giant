@@ -193,6 +193,7 @@
 'Assets/Scripts/Camera Scripts/CameraScript.cs'
 'Assets/Scripts/Cloud Collector Scripts/CloudCollector.cs'
 'Assets/Scripts/Cloud Collector Scripts/CloudSpawner.cs'
+'Assets/Scripts/Collectables Scripts/CollectablesScript.cs'
 'Assets/Scripts/Game Controllers/HighScoreController.cs'
 'Assets/Scripts/Game Controllers/MainMenuController.cs'
 'Assets/Scripts/Game Controllers/OptionsContoller.cs'

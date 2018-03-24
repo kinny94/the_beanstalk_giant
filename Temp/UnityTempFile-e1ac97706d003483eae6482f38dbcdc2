@@ -187,12 +187,14 @@
 -define:UNITY_EDITOR_OSX
 -define:ENABLE_NATIVE_ARRAY_CHECKS
 -define:UNITY_TEAM_LICENSE
+'Assets/CollectablesScript.cs'
 'Assets/Scripts/Background Scripts/BGScaler.cs'
 'Assets/Scripts/Background Scripts/Collectors/BGCollector.cs'
 'Assets/Scripts/Background Scripts/Collectors/BGSpawner.cs'
 'Assets/Scripts/Camera Scripts/CameraScript.cs'
 'Assets/Scripts/Cloud Collector Scripts/CloudCollector.cs'
 'Assets/Scripts/Cloud Collector Scripts/CloudSpawner.cs'
+'Assets/Scripts/Collectables Scripts/CollectableScript.cs'
 'Assets/Scripts/Game Controllers/HighScoreController.cs'
 'Assets/Scripts/Game Controllers/MainMenuController.cs'
 'Assets/Scripts/Game Controllers/OptionsContoller.cs'
