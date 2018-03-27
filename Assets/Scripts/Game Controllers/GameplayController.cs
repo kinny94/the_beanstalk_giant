@@ -16,7 +16,19 @@ public class GameplayController : MonoBehaviour {
 	void Awake(){
 		makeInstance ();
 	}
-	
+
+	public void SetScore( int score ){
+		scoreText.text = "x" + score;
+	}
+
+	public void setCoinScore( int coinScore ){
+		coinText.text = "x" + coinScore;
+	}
+
+	public void setLifeScore( int lifeScore ){
+		lifeText.text = "x" + lifeScore;
+	}
+
 	void makeInstance(){
 
 		if (instance == null) {
