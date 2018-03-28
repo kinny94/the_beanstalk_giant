@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
 
 	void OnLevelWasLoaded(){
 		if (Application.loadedLevelName == "Gameplay") {
-			if (gameRestartedAfterPlayerDied) {
+			if (gameRestartAfterPlayerDied) {
 				GameplayController.instance.setScore (score);
 				GameplayController.instance.setCoinScore (coinScore);
 				GameplayController.instance.setLifeScore (lifeScore);
