@@ -1,8 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player Scripts/PlayerScore.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game Controllers/GameplayController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Game Controllers/GameplayController.cs" Line="29" Column="35" />
+      <File FileName="Assets/Scripts/Game Controllers/GameplayController.cs" Line="76" Column="33" />
       <File FileName="Assets/Scripts/Game Controllers/MainMenuController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Player Scripts/PlayerBounds.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Background Scripts/BGScaler.cs" Line="1" Column="1" />
@@ -11,7 +11,7 @@
       <File FileName="Assets/Scripts/Cloud Collector Scripts/CloudSpawner.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Game Controllers/HighScoreController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Game Controllers/OptionsContoller.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Player Scripts/PlayerScore.cs" Line="50" Column="44" />
+      <File FileName="Assets/Scripts/Player Scripts/PlayerScore.cs" Line="82" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
