@@ -37,6 +37,15 @@ public class GameplayController : MonoBehaviour {
 		Application.LoadLevel ("MainMenu");
 	}
 
+	public void PlayerDiedRestartTheGame(){
+		StartCoroutine (PlayerDiedRestart());
+	}
+
+	IEnumerator PlayerDiedRestart(){
+		yield return new WaitForSeconds (1f);
+		Application.LoadLevel ("Gameplay");
+	}	
+
 	public void SetScore( int score ){
 		scoreText.text = "x" + score;
 	}

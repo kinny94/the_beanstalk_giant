@@ -17,15 +17,31 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void OnLevelWasLoaded(){
+		
 		if (Application.loadedLevelName == "Gameplay") {
+			
 			if (gameRestartAfterPlayerDied) {
-				GameplayController.instance.setScore (score);
+				
+				GameplayController.instance.SetScore (score);
 				GameplayController.instance.setCoinScore (coinScore);
 				GameplayController.instance.setLifeScore (lifeScore);
 
-				PlayerScript.scoreCount = score;
-				PlayerScore.coinScore = coinScore; 
+				PlayerScore.scoreCount = score;
+				PlayerScore.coinScore = coinScore;
 				PlayerScore.lifeScore = lifeScore;
+
+			} else if( gameStartedFromMainMenu ) {
+
+				PlayerScore.scoreCount = 0;
+				PlayerScore.coinScore = 0;
+				PlayerScore.lifeScore = 2;
+
+				GameplayController.instance.SetScore (0);
+				GameplayController.instance.setCoinScore (0);
+				GameplayController.instance.setLifeScore (2);
+
+				GameplayController.instance.PlayerDiedRestartTheGame ();
+
 			}
 		}
 	}
@@ -36,6 +52,33 @@ public class GameManager : MonoBehaviour {
 		} else {
 			instance = this;
 			DontDestroyOnLoad (gameObject);
+		}
+	}
+
+	public void checkGameStatus( int score, int coinscore, int lifescore ){
+		
+		if (lifescore < 0) {
+			
+			gameStartedFromMainMenu = false;
+			gameRestartAfterPlayerDied = false;
+
+			GameplayController.instance.GameOverShowPanel ( score, coinscore );
+
+
+		} else {
+
+			this.score = score;
+			this.coinScore = coinscore;
+			this.lifeScore = lifescore;
+
+			GameplayController.instance.SetScore ( score );
+			GameplayController.instance.setCoinScore( coinscore );
+			GameplayController.instance.setLifeScore (lifescore);
+
+			gameStartedFromMainMenu = false;
+			gameRestartAfterPlayerDied = true;
+
+
 		}
 	}
 }

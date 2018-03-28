@@ -77,11 +77,10 @@ public class PlayerScore : MonoBehaviour {
 		if (target.tag == "Deadly") {
 			cameraScript.moveCamera = false;
 			countScore = false;
-
-			GameplayController.instance.GameOverShowPanel (coinScore, scoreCount);  
 				
 			transform.position = new Vector3 (500, 500, 0);
 			lifeScore--;
+			GameManager.instance.checkGameStatus ( scoreCount, coinScore, lifeScore);
 		}
 	}
 }
