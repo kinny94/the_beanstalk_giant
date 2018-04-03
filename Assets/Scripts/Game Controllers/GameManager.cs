@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -16,12 +17,20 @@ public class GameManager : MonoBehaviour {
 		MakeSingleton ();
 	}
 
-	void OnLevelWasLoaded(){
-		
+	void OnEnable() {
+		SceneManager.sceneLoaded += OnLevelFinishedLoading;
+	}
+
+	void OnDisable() {
+		SceneManager.sceneLoaded -= OnLevelFinishedLoading;
+	}
+
+	private void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode) {
+
 		if (Application.loadedLevelName == "Gameplay") {
-			
+
 			if (gameRestartAfterPlayerDied) {
-				
+
 				GameplayController.instance.SetScore (score);
 				GameplayController.instance.setCoinScore (coinScore);
 				GameplayController.instance.setLifeScore (lifeScore);
@@ -46,6 +55,11 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+//	void OnLevelWasLoaded(){
+//		
+//
+//	}
+
 	void MakeSingleton () {
 		if (instance != null) {
 			Destroy (gameObject);
@@ -55,30 +69,30 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	public void checkGameStatus( int score, int coinscore, int lifescore ){
+	public void checkGameStatus( int score, int coinScore, int lifeScore ){
 		
-		if (lifescore < 0) {
+		if (lifeScore  < 0) {
 			
 			gameStartedFromMainMenu = false;
 			gameRestartAfterPlayerDied = false;
 
-			GameplayController.instance.GameOverShowPanel ( score, coinscore );
+			GameplayController.instance.GameOverShowPanel ( score, coinScore );
 
 
 		} else {
 
 			this.score = score;
-			this.coinScore = coinscore;
-			this.lifeScore = lifescore;
+			this.coinScore = coinScore;
+			this.lifeScore = lifeScore;
 
 			GameplayController.instance.SetScore ( score );
-			GameplayController.instance.setCoinScore( coinscore );
-			GameplayController.instance.setLifeScore (lifescore);
+			GameplayController.instance.setCoinScore( coinScore );
+			GameplayController.instance.setLifeScore (lifeScore );
 
 			gameStartedFromMainMenu = false;
 			gameRestartAfterPlayerDied = true;
 
-
+			GameplayController.instance.PlayerDiedRestartTheGame ();
 		}
 	}
 }

@@ -1,6 +1,7 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScore : MonoBehaviour {
 
@@ -66,12 +67,11 @@ public class PlayerScore : MonoBehaviour {
 
 		if( target.tag == "Bounds" ){
 			cameraScript.moveCamera = false;
-			countScore = false;
-
-			GameplayController.instance.GameOverShowPanel (coinScore, scoreCount);  
+			countScore = false;	
 			lifeScore--;
-
 			transform.position = new Vector3 (500, 500, 0);
+			GameManager.instance.checkGameStatus ( scoreCount, coinScore, lifeScore);
+
 		}
 
 		if (target.tag == "Deadly") {
